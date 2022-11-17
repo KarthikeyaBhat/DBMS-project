@@ -1,6 +1,4 @@
-# Project Title
-
-Database Management System for administrative use cases for the Department of Defence 
+# Database Management System for administrative use cases for the Department of Defence 
 
 
 ## Installation
