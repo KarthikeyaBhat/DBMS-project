@@ -1,0 +1,18 @@
+{% extends "navbar.html" %}
+{% block body %}
+{% for row in data %}
+<h4 class="container" style="position: absolute; left:40%">Pension beneficiary (ID): {{row}}</h4>
+<form class="update container mt-5" style="width: 600px;" action="/pensions-update?id={{row}}" method="POST">
+  {% endfor %}
+    <input type="text" name="address" class="form-control mb-3" placeholder="Address" required autofocus>
+    <input type="tel" name="phone" class="form-control mb-3" placeholder="Phone" pattern="[6-9]{1}[0-9]{9}" required autofocus>
+    <input type="text" name="sw_id" class="form-control mb-3" placeholder="SWing_id" autofocus>
+    <input type="text" name="yos" class="form-control mb-3" placeholder="Years of Service" required autofocus>
+    <input type="text" name="ammount" class="form-control mb-3" placeholder="Ammount" required autofocus>
+    <input type="text" name="dc" class="form-control mb-3" placeholder="Dependent count" required autofocus>
+    <input type="text" name="age" class="form-control mb-3" placeholder="Age" autofocus>
+    <input type="text" name="name" class="form-control mb-3" placeholder="Name" autofocus>
+    <input type="text" name="w_id" class="form-control mb-3" placeholder="Wing_id" required autofocus>
+    <button class="btn btn-info container" type="submit">Enter</button>
+</form>
+{% endblock %}

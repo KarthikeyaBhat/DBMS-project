@@ -1,0 +1,45 @@
+{% extends "navbar.html" %}
+{% block body %}
+<div class="d-flex justify-content-center">
+<table class="table table-striped w-75">
+    <thead>
+      <tr>
+        <th scope="col">Wing_id</th>
+        <th scope="col">SW_id</th>
+        <th scope="col">Name</th>
+        <th scope="col">PID</th>
+        <th scope="col">Asecr_id</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}  
+        <tr> 
+            <td><p>{{row[0]}}</p></td> 
+            <td><p>{{row[1]}}</p></td>
+            <td><p>{{row[2]}}</p></td>
+            <td><p>{{row[3]}}</p></td>
+            <td><p>{{row[4]}}</p></td>
+            <td><a href="/jtsecr?PID={{row[3]}}"><button class="btn btn-danger">Remove</button></a></td>
+            <td><a href="/jtsecr-update?PID={{row[3]}}">
+              <button type="button" class="btn btn-info" >
+                Edit
+              </button>
+            </a>
+            </td>
+        </tr> 
+    {% endfor %} 
+    </hr>
+    <form class="insert" action="/jtsecr" method="POST">
+        <tr> 
+            <td><input type="text" name="w_id" class="form-control" placeholder="Wing_id" required autofocus></td>
+            <td><input type="text" name="sw_id" class="form-control" placeholder="SW_id" required autofocus></td>
+            <td><input type="text" name="name" class="form-control" placeholder="Name" required autofocus></td>
+            <td><input type="text" name="PID" class="form-control" placeholder="PID" required autofocus></td> 
+            <td><input type="text" name="asecr_id" class="form-control" placeholder="Asecr_id" required autofocus></td> 
+        </tr> 
+        <button class="btn " type="submit">Enter</button>
+    </form>
+    </tbody>
+  </table>
+  </div>
+{% endblock %}

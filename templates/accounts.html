@@ -1,0 +1,57 @@
+{% extends "navbar.html" %}
+{% block body %}
+<div class="d-flex justify-content-center">
+<table class="table table-striped w-75">
+    <thead>
+      <tr>
+        <th scope="col">From_name</th>
+        <th scope="col">To_name</th>
+        <th scope="col">To_Bank</th>
+        <th scope="col">Amount</th>
+        <th scope="col">From_Bank</th>
+        <th scope="col">To_AC_no</th>
+        <th scope="col">From_AC_no</th>
+        <th scope="col">Date of Trans.</th>
+        <th scope="col">Wing_id</th>
+        <th scope="col">Details</th>
+        <th scope="col">Trans_id</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}  
+        <tr> 
+            <td><p>{{row[0]}}</p></td> 
+            <td><p>{{row[1]}}</p></td>
+            <td><p>{{row[2]}}</p></td>
+            <td><p>{{row[3]}}</p></td>
+            <td><p>{{row[4]}}</p></td>
+            <td><p>{{row[5]}}</p></td>
+            <td><p>{{row[6]}}</p></td>
+            <td><p>{{row[7]}}</p></td>
+            <td><p>{{row[8]}}</p></td>
+            <td><p>{{row[9]}}</p></td>
+            <td><p>{{row[10]}}</p></td>
+            <td><a href="/accounts-delete?Trans_id={{row[10]}}"><button class="btn btn-danger">Remove</button></a></td>
+        </tr> 
+    {% endfor %} 
+    </hr>
+    <form class="insert" action="/accounts" method="POST">
+        <tr> 
+            <td><input type="text" name="from_name" class="form-control" placeholder="From_name" required autofocus></td> 
+            <td><input type="text" name="to_name" class="form-control" placeholder="To_name" required autofocus></td>
+            <td><input type="text" name="to_bank" class="form-control" placeholder="To_Bank" required autofocus></td>
+            <td><input type="text" name="ammount" class="form-control" placeholder="Amount" required autofocus></td>
+            <td><input type="text" name="from_bank" class="form-control" placeholder="From_Bank"  required autofocus></td>
+            <td><input type="text" name="to_ac_no" class="form-control" placeholder="To_AC_no" required autofocus></td>
+            <td><input type="text" name="from_ac_no" class="form-control" placeholder="From_AC_no" autofocus></td>
+            <td><input type="date" name="dot" class="form-control" placeholder="Date of Trans." required autofocus></td>
+            <td><input type="text" name="w_id" class="form-control" placeholder="Wing_id" required autofocus></td>
+            <td><input type="text" name="details" class="form-control" placeholder="Details" required autofocus></td>
+            <td><input type="text" name="trans_id" class="form-control" placeholder="Trans_id" required autofocus></td>
+        </tr> 
+        <button class="btn " type="submit">Enter</button>
+    </form>
+    </tbody>
+  </table>
+  </div>
+{% endblock %}

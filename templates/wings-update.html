@@ -1,0 +1,13 @@
+{% extends "navbar.html" %}
+{% block body %}
+
+{% for row in data %}
+<h4 class="container" style="position: absolute; left:43%">Wing_id: {{row}}</h4>
+<form class="update container mt-5" style="width: 600px;" action="/wings-update?w_id={{row}}" method="POST">
+  {% endfor %}
+  <input type="text" name="asecr_id" class="form-control mb-3" placeholder="Asecr_id" required autofocus>
+  <input type="text" name="hq" class="form-control mb-3" placeholder="HQ" required autofocus>
+  <input type="text" name="name" class="form-control mb-3" placeholder="Name" required autofocus>
+  <button class="btn btn-info container" type="submit">Enter</button>
+</form>
+{% endblock %}
