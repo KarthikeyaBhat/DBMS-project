@@ -1,4 +1,5 @@
-# Database Management System for administrative use cases for the Department of Defence 
+# Getting Started
+Database Management System for administrative use cases for the Department of Defence 
 
 
 ## Installation
